@@ -41,7 +41,7 @@ const Navbar = () => {
           className=" text-zinc-400 text-3xl ri-close-circle-fill cursor-pointer"
         ></i>
       )}
-      <div className="bg-zinc-200 search w-[50%] max-h-[50vh] absolute top-[90%] overflow-auto">
+      <div className="bg-zinc-200 search w-[50%] max-h-[50vh] absolute left-[5%] top-[100%] overflow-auto">
         {searches.map((s, i) => (
           <Link
             key={i}

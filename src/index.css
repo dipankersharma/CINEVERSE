@@ -16,3 +16,49 @@
     background: #6556Cd;
     border-radius: 10px;
 }
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: #27272a;
+    background-image: none;
+    border: 0 !important;
+    flex: 1;
+    font-size: 1em;
+    font-family: "open sans",sans-serif;
+    cursor:pointer;
+    color: #fff;
+    outline: 0;
+    padding: 0 0.5rem;
+    box-shadow: none;
+}
+select::-ms-expand{
+    display: none;
+}
+.select{
+    position: relative;
+    display: flex;
+    width: 20em;
+    height:2.8em;
+    line-height: 3;
+    background: #27272a;
+    overflow: hidden;
+    border-radius: 0.25em;
+
+}
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #27272a;
+    cursor: pointer;
+    pointer-events: none;
+    transition: 0.25s all ease;
+}
+.select:hover::after{
+    color: #6556Cd;
+}
