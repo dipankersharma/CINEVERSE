@@ -5,6 +5,7 @@ import axios from '../Utils/Axios';
 import Header from './Partials/Header'
 import HorizontalCard from './Partials/HorizontalCard';
 import Dropdown from './Partials/Dropdown';
+import Loader from './Loader';
 
 function Home() {
   document.title = 'SCSDB | Homepage'
@@ -51,7 +52,7 @@ useEffect(() => {
         <HorizontalCard data = {trending}/>
       </div>
     </>
-  ):<h1>Loading..</h1>
+  ):(<Loader/>)
 }
 
 export default Home
