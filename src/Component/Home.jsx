@@ -18,7 +18,6 @@ function Home() {
   try {
     
     const response = await axios.get('/trending/all/week');
-    console.log(response.data.results);
     let randomData = response.data.results[(Math.random()*response.data.results.length).toFixed()]
     setWallpaper(randomData);
   } catch (error) {

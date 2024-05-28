@@ -6,7 +6,7 @@ const HorizontalCard = ({ data }) => {
   return (
     <div className=" flex  w-[100%] overflow-y-hidden p-3">
       {data.map((item, i) => (
-        <div
+        <Link to={`/${item.media_type}/details/${item.id}`}
           className="text-white min-w-[18%] mr-5 mb-5 bg-zinc-900 rounded-lg "
           key={i}
         >
@@ -31,7 +31,7 @@ const HorizontalCard = ({ data }) => {
               <Link className="text-blue-500">more</Link>
             </p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

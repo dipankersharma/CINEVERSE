@@ -41,9 +41,10 @@ const Navbar = () => {
           className=" text-zinc-400 text-3xl ri-close-circle-fill cursor-pointer"
         ></i>
       )}
-      <div className="bg-zinc-200 search w-[50%] max-h-[50vh] absolute left-[5%] top-[100%] overflow-auto">
+      <div className="bg-zinc-200 search w-[50%] max-h-[50vh] z-[100] absolute left-[5%] top-[100%] overflow-auto">
         {searches.map((s, i) => (
           <Link
+             to={`/${s.media_type}/details/${s.id}`}
             key={i}
             className=" hover:text-black hover:bg-zinc-300 duration-300 text-zinc-600 font-semibold w-[100%] p-5 flex justify-start items-center border-b-2 border-zinc-100"
           >
