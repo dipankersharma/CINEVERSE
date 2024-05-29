@@ -6,7 +6,7 @@ const Header = ({ value }) => {
   return (
     <div
       style={{
-        background: `url(https://image.tmdb.org/t/p/original/${
+        background: `linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.5),rgba(0,0,0,.9)),url(https://image.tmdb.org/t/p/original/${
           value.backdrop_path || value.profile_path
         })`,
         backgroundPosition: "center",
