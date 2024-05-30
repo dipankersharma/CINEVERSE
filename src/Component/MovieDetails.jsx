@@ -22,9 +22,9 @@ function MovieDetails() {
     return () => {
       dispatch(removeMovie());
     };
-  }, []);
+  }, [id]);
 
-  const { information } = useSelector((state) => state.Movie);
+  const { information } = useSelector((state) => state.movie);
   console.log(information);
 
   return information ? (
