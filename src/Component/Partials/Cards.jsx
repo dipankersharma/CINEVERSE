@@ -6,8 +6,8 @@ function Cards({ data ,title}) {
   return (
     <div className="w-full flex flex-wrap justify-around px-[5%] bg-[#1F1E24]">
       {data.map((item, i) => (
-        <Link to={`/${item.media_type||title}/details/${item.id}`} className="w-[30vh] mr-[5%] mb-[5%] relative"  key={i}>
-            <img className="w-full h-[45vh] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] mb-2" src={`https://image.tmdb.org/t/p/original/${
+        <Link to={`/${item.media_type||title}/details/${item.id}`} className="w-[30vh] mr-[5%] mb-[5%] relative hover:scale-125 duration-300 "  key={i}>
+            <img className="w-full h-[45vh] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] mb-2 " src={`https://image.tmdb.org/t/p/original/${
           item.backdrop_path || item.poster_path||item.profile_path
         }
         `} alt="" />

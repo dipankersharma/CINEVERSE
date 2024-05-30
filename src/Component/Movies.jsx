@@ -18,7 +18,7 @@ const Movies = () => {
 
   const GetMovie = async () => {
     try {
-      const { data } = await axios.get(`movie/${category}`);
+      const { data } = await axios.get(`movie/${category}?page=${page}`);
 
       if (data.results.length > 0) {
         setmovie((prev) => [...prev, ...data.results]);
