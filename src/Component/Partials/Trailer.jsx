@@ -18,6 +18,7 @@ const Trailer = () => {
       ></Link>
       {ytvideo ? (
         <ReactPlayer
+          controls
           width={1300}
           height={600}
           url={`https://www.youtube.com/watch?v=${ytvideo.key}`}

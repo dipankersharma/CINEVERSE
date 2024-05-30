@@ -11,6 +11,7 @@ import { asyncloadtv } from "../Store/Actions/TvAction";
 import HorizontalCard from "../Component/Partials/HorizontalCard";
 import Loader from "./Loader";
 import { removeTvShow } from "../Store/Reducers/Tvslice";
+import noimage from "../../public/noimage.png";
 
 function TvDetails() {
   const navigate = useNavigate();
@@ -205,12 +206,18 @@ function TvDetails() {
                   <Link className="w-[15vh] mr-[15%]" key={i}>
                     <img
                       className="min-w-[14vw] h-[40vh] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] mb-2 "
-                      src={`https://image.tmdb.org/t/p/original/${
+                      src={
                         item.backdrop_path ||
                         item.poster_path ||
                         item.profile_path
+                          ? `https://image.tmdb.org/t/p/original/${
+                              item.backdrop_path ||
+                              item.poster_path ||
+                              item.profile_path
+                            }
+        `
+                          : noimage
                       }
-        `}
                       alt=""
                     />
                     <h1 className="text-zinc-300 font-semibold text-xl">
