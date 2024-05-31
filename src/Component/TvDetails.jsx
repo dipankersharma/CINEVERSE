@@ -38,7 +38,7 @@ function TvDetails() {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className="w-screen  h-[185vh] px-[5%] relative"
+      className="w-screen  h-[200vh] px-[5%] relative"
     >
       {/* part-1 Navpart */}
       <nav className="w-full h-[10vh] fixed flex gap-10 items-center text-zinc-100 text-xl">
@@ -203,7 +203,11 @@ function TvDetails() {
             <div className=" flex  w-[100%] overflow-y-hidden p-5 ">
               {information.detail.seasons.length > 0 ? (
                 information.detail.seasons.map((item, i) => (
-                  <Link className="w-[15vh] mr-[15%]" key={i}>
+                  <Link
+                    to={`/tv/details/${id}/${item.season_number}`}
+                    className="w-[15vh] mr-[15%]"
+                    key={i}
+                  >
                     <img
                       className="min-w-[14vw] h-[40vh] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] mb-2 "
                       src={

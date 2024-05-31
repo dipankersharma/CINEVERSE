@@ -9,18 +9,18 @@ const HorizontalCard = ({ data }) => {
         data.map((item, i) => (
           <Link
             to={`/${item.media_type}/details/${item.id}`}
-            className="text-white min-w-[18%] mr-5 mb-5 bg-zinc-900 rounded-lg "
+            className="text-white min-w-[20%] mr-5 mb-5 bg-zinc-900 rounded-lg relative "
             key={i}
           >
             <img
-              className=" rounded-t-lg w-full h-[55%] object-cover "
+              className=" rounded-t-lg w-full h-[45%] object-cover "
               src={`https://image.tmdb.org/t/p/original/${
                 item.backdrop_path || item.poster_path
               }`}
               alt=""
             />
 
-            <div className="text-white p-3 h-[45%]">
+            <div className="text-white p-3 h-[45%] absolute">
               {" "}
               <h1 className="text-xl font-semibold mb-2">
                 {item.title ||

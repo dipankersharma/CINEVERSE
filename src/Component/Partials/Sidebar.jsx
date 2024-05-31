@@ -55,10 +55,16 @@ const Sidebar = () => {
           {" "}
           Website information
         </h1>
-        <Link className="hover:bg-[#6556CD] text-white duration-300 rounded-lg p-3">
+        <Link
+          to={"/about"}
+          className="hover:bg-[#6556CD] text-white duration-300 rounded-lg p-3"
+        >
           <i className=" mr-2 ri-information-2-fill"></i>Abou SCSDB
         </Link>
-        <Link className="hover:bg-[#6556CD] text-white duration-300 rounded-lg p-3">
+        <Link
+          to={"/contact"}
+          className="hover:bg-[#6556CD] text-white duration-300 rounded-lg p-3"
+        >
           {" "}
           <i className="mr-1 ri-contacts-book-3-fill"></i> Contact Us
         </Link>

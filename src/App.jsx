@@ -12,6 +12,9 @@ import TvDetails from "./Component/TvDetails";
 import PeopleDetails from "./Component/PeopleDetails";
 import Trailer from "./Component/Partials/Trailer";
 import Notfound from "./Component/Notfound";
+import SeasonDetails from "./Component/SeasonDetails";
+import Contact from "./Component/Contact";
+import About from "./Component/About";
 
 function App() {
   return (
@@ -28,8 +31,11 @@ function App() {
         <Route path="/tv/details/:id" element={<TvDetails />}>
           <Route path="/tv/details/:id/trailer" element={<Trailer />} />
         </Route>
+        <Route path="/tv/details/:id/:number" element={<SeasonDetails />} />
         <Route path="/person" element={<People />} />
         <Route path="/person/details/:id" element={<PeopleDetails />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
     </div>
