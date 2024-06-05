@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import Navbar from './Partials/Navbar';
-import Dropdown from './Partials/Dropdown';
-import InfiniteScroll from 'react-infinite-scroll-component';
-import Loader from './Loader';
-import axios from '../Utils/Axios';
-import Cards from './Partials/Cards';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "./Partials/Navbar";
+import Dropdown from "./Partials/Dropdown";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Loader from "./Loader";
+import axios from "../Utils/Axios";
+import Cards from "./Partials/Cards";
 
 const Movies = () => {
-    const [movie, setmovie] = useState([]);
+  const [movie, setmovie] = useState([]);
   const [category, setcategory] = useState("top_rated");
   const [page, setpage] = useState(1);
   const [hasMore, sethasMore] = useState(true);
   const navigate = useNavigate();
-  document.title = "SCSDB | Movies"
-
+  document.title = "CINEVERSE | Movies";
 
   const GetMovie = async () => {
     try {
@@ -26,7 +25,6 @@ const Movies = () => {
       } else {
         sethasMore(false);
       }
-
     } catch (error) {
       (error) => {
         console.log(error);
@@ -36,7 +34,7 @@ const Movies = () => {
 
   const refreshHandler = () => {
     if (movie.length === 0) {
-        GetMovie();
+      GetMovie();
     } else {
       setpage(1);
       setmovie([]);
@@ -45,11 +43,10 @@ const Movies = () => {
   };
 
   useEffect(() => {
-    refreshHandler()
+    refreshHandler();
   }, [category]);
 
- return movie.length>0 ? (
-
+  return movie.length > 0 ? (
     <div className="w-screen h-screen">
       <div className="w-full flex items-center justify-between mb-10 px-[5%] ">
         <h1 className="w-[20%] font-semibold text-2xl text-zinc-400">
@@ -63,7 +60,7 @@ const Movies = () => {
           <Navbar />
           <Dropdown
             title={"categories"}
-            options={["upcoming", "top_rated",'popular','now_playing']}
+            options={["upcoming", "top_rated", "popular", "now_playing"]}
             func={(e) => setcategory(e.target.value)}
           />
         </div>
@@ -71,13 +68,15 @@ const Movies = () => {
       <InfiniteScroll
         dataLength={movie.length}
         hasMore={hasMore}
-        loader={<Loader/>}
+        loader={<Loader />}
         next={GetMovie}
       >
         <Cards title="movie" data={movie} />
       </InfiniteScroll>
     </div>
-  ):(<Loader/>)
-}
+  ) : (
+    <Loader />
+  );
+};
 
-export default Movies
+export default Movies;

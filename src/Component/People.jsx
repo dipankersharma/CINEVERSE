@@ -11,7 +11,7 @@ function People() {
   const [page, setpage] = useState(1);
   const [hasMore, sethasMore] = useState(true);
   const navigate = useNavigate();
-  document.title = "SCSDB | People";
+  document.title = "CINEVERSE | People";
 
   const GetPeople = async () => {
     try {

@@ -13,7 +13,7 @@ function Tv_Show() {
   const [page, setpage] = useState(1);
   const [hasMore, sethasMore] = useState(true);
   const navigate = useNavigate();
-  document.title = "SCSDB | Popular";
+  document.title = "CINEVERSE | Tv Shows";
 
   const GetTvShow = async () => {
     try {

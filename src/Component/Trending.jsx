@@ -14,40 +14,37 @@ const Trending = () => {
   const [categories, setcategories] = useState("all");
   const [trending, settrending] = useState([]);
   const [page, setpage] = useState(1);
-  const [hasMore , sethasMore]=useState(true)
-  document.title = "SCSDB | Trending"
+  const [hasMore, sethasMore] = useState(true);
+  document.title = "CINEVERSE | Trending";
   const getTrending = async () => {
     try {
-      const { data } = await axios.get(`/trending/${categories}/${duration}?page=${page}`);
+      const { data } = await axios.get(
+        `/trending/${categories}/${duration}?page=${page}`
+      );
 
-      if(data.results.length > 0){
+      if (data.results.length > 0) {
         settrending((prev) => [...prev, ...data.results]);
         setpage(page + 1);
-       }else{
-        hasMore(false)
-       }
-
+      } else {
+        hasMore(false);
+      }
     } catch (error) {
       console.log(error);
     }
   };
-  
-  
-  const refreshHandler = ()=>{
-    if(trending.length===0){
-      getTrending()
-    }else{
-      setpage(1)
-      settrending([])
-      getTrending()
+
+  const refreshHandler = () => {
+    if (trending.length === 0) {
+      getTrending();
+    } else {
+      setpage(1);
+      settrending([]);
+      getTrending();
     }
-  }
-
-
-
+  };
 
   useEffect(() => {
-    refreshHandler()
+    refreshHandler();
   }, [duration, categories]);
   return trending.length > 0 ? (
     <div className="w-screen h-screen">

@@ -13,7 +13,7 @@ function Popular() {
   const [page, setpage] = useState(1);
   const [hasMore, sethasMore] = useState(true);
   const navigate = useNavigate();
-  document.title = "SCSDB | Popular"
+  document.title = "CINEVERSE | Popular";
 
   const GetPopular = async () => {
     try {
@@ -25,7 +25,6 @@ function Popular() {
       } else {
         sethasMore(false);
       }
-
     } catch (error) {
       (error) => {
         console.log(error);
@@ -44,11 +43,10 @@ function Popular() {
   };
 
   useEffect(() => {
-    refreshHandler()
+    refreshHandler();
   }, [category]);
- console.log(popular)
-  return popular.length>0 ? (
-
+  console.log(popular);
+  return popular.length > 0 ? (
     <div className="w-screen h-screen">
       <div className="w-full flex items-center justify-between mb-10 px-[5%] ">
         <h1 className="w-[20%] font-semibold text-2xl text-zinc-400">
@@ -70,13 +68,15 @@ function Popular() {
       <InfiniteScroll
         dataLength={popular.length}
         hasMore={hasMore}
-        loader={<Loader/>}
+        loader={<Loader />}
         next={GetPopular}
       >
         <Cards title={category} data={popular} />
       </InfiniteScroll>
     </div>
-  ):(<Loader/>)
+  ) : (
+    <Loader />
+  );
 }
 
 export default Popular;

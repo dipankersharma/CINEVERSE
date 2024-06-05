@@ -6,7 +6,7 @@ const Sidebar = () => {
     <div className="sidebar w-[20%] h-full  border-r-2 border-zinc-500 p-10 ">
       <h1 className="text-2xl text-white font-bold">
         <i className="ri-tv-fill text-[#6556CD] mr-2 "></i>
-        <span className=""> SCSBD</span>
+        <span className="">CINEVERSE</span>
       </h1>
       <nav className="flex flex-col text-zinc-400 gap-2 mb-2">
         <h1 className="text-white font-semibold text-xl mt-10 mb-5">
@@ -59,7 +59,7 @@ const Sidebar = () => {
           to={"/about"}
           className="hover:bg-[#6556CD] text-white duration-300 rounded-lg p-3"
         >
-          <i className=" mr-2 ri-information-2-fill"></i>Abou SCSDB
+          <i className=" mr-2 ri-information-2-fill"></i>About CINEVERSE
         </Link>
         <Link
           to={"/contact"}

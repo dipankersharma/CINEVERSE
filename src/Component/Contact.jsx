@@ -52,7 +52,7 @@ const Contact = () => {
                 <a href="https://www.facebook.com/dipanker.kumar.712/">
                   <i class="ri-facebook-circle-fill"></i>
                 </a>
-                <a href="https://www.facebook.com/dipanker.kumar.712/">
+                <a href="https://x.com/Dipanker_Sharm">
                   <i class="ri-twitter-x-fill"></i>
                 </a>
                 <a href="https://www.facebook.com/dipanker.kumar.712/">
